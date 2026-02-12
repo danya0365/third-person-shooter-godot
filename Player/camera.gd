@@ -4,6 +4,8 @@ var camera_rotation: Vector2 = Vector2.ZERO
 var mouse_secsitivity: float = 0.001
 var max_y_rotation: float = 1.2
 
+@export var character: CharacterBody3D
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -23,8 +25,9 @@ func camera_look(mouse_movement: Vector2) -> void:
 	camera_rotation += mouse_movement
 	
 	transform.basis = Basis()
+	character.transform.basis = Basis()
 	
-	rotate_object_local(Vector3(0, 1, 0), -camera_rotation.x)
+	character.rotate_object_local(Vector3(0, 1, 0), -camera_rotation.x)
 	rotate_object_local(Vector3(1, 0, 0), -camera_rotation.y)
 	
 	camera_rotation.y = clamp(camera_rotation.y, -max_y_rotation, max_y_rotation)
