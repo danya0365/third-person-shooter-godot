@@ -2,6 +2,7 @@ extends Node3D
 
 var camera_rotation: Vector2 = Vector2.ZERO
 var mouse_secsitivity: float = 0.001
+var max_y_rotation: float = 1.2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -25,3 +26,5 @@ func camera_look(mouse_movement: Vector2) -> void:
 	
 	rotate_object_local(Vector3(0, 1, 0), -camera_rotation.x)
 	rotate_object_local(Vector3(1, 0, 0), -camera_rotation.y)
+	
+	camera_rotation.y = clamp(camera_rotation.y, -max_y_rotation, max_y_rotation)
