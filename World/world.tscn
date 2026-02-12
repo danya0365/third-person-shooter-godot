@@ -1,8 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6cbtb1fxuh7d"]
+[gd_scene load_steps=7 format=3 uid="uid://b6cbtb1fxuh7d"]
 
 [ext_resource type="Material" uid="uid://bl5rodxtuq230" path="res://Assets/kenney_prototype-textures/prototype_texture_dark.tres" id="1_62w18"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_62w18"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_8a836"]
+sky_material = SubResource("ProceduralSkyMaterial_62w18")
+
+[sub_resource type="Environment" id="Environment_j8job"]
+background_mode = 2
+sky = SubResource("Sky_8a836")
+tonemap_mode = 2
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_62w18"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_8a836"]
+
 [node name="World" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_j8job")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 use_collision = true
@@ -17,3 +40,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.036, 0)
 operation = 2
 size = Vector3(29, 5.972, 29)
 material = ExtResource("1_62w18")
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05556, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+shape = SubResource("CapsuleShape3D_62w18")
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 1.5, 2, 5)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
+mesh = SubResource("CapsuleMesh_8a836")
