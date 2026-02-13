@@ -82,6 +82,8 @@ func enter_aim() -> void:
 		
 	camera_tween = get_tree().create_tween()
 	camera_tween.set_parallel()
+	camera_tween.set_trans(Tween.TRANS_EXPO)
+	camera_tween.set_ease(Tween.EASE_IN_OUT)
 	
 	camera_tween.tween_property(camera, "fov", aim_fov, aim_speed)
 	camera_tween.tween_property(edge_spring_arm, "spring_length", aim_edge_spring_length*sign(edge_spring_arm.spring_length), aim_speed)
@@ -93,6 +95,8 @@ func exit_aim() -> void:
 		
 	camera_tween = get_tree().create_tween()
 	camera_tween.set_parallel()
+	camera_tween.set_trans(Tween.TRANS_EXPO)
+	camera_tween.set_ease(Tween.EASE_IN_OUT)
 	
 	camera_tween.tween_property(camera, "fov", default_fov, aim_speed)
 	camera_tween.tween_property(edge_spring_arm, "spring_length", default_edge_spring_arm_length*sign(edge_spring_arm.spring_length), aim_speed)
@@ -104,6 +108,8 @@ func enter_sprint() -> void:
 		
 	camera_tween = get_tree().create_tween()
 	camera_tween.set_parallel()
+	camera_tween.set_trans(Tween.TRANS_EXPO)
+	camera_tween.set_ease(Tween.EASE_IN_OUT)
 	
 	camera_tween.tween_property(camera, "fov", sprint_fov, sprint_tween_speed)
 	camera_tween.tween_property(edge_spring_arm, "spring_length", default_edge_spring_arm_length*sign(edge_spring_arm.spring_length), aim_speed)
@@ -115,6 +121,8 @@ func exit_sprint() -> void:
 		
 	camera_tween = get_tree().create_tween()
 	camera_tween.set_parallel()
+	camera_tween.set_trans(Tween.TRANS_EXPO)
+	camera_tween.set_ease(Tween.EASE_IN_OUT)
 	
 	camera_tween.tween_property(camera, "fov", default_fov, sprint_tween_speed)
 	camera_tween.tween_property(edge_spring_arm, "spring_length", default_edge_spring_arm_length*sign(edge_spring_arm.spring_length), aim_speed)
