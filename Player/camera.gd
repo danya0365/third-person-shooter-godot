@@ -42,8 +42,8 @@ func camera_look(mouse_movement: Vector2) -> void:
 	camera_rotation.y = clamp(camera_rotation.y, -max_y_rotation, max_y_rotation)
 
 func swap_camera_alignment() -> void:
-	default_edge_spring_arm_length = -default_edge_spring_arm_length
-	set_rear_spring_arm_position(default_edge_spring_arm_length, camera_alignment_speed)
+	var new_pos = default_edge_spring_arm_length * -sign(edge_spring_arm.spring_length)
+	set_rear_spring_arm_position(new_pos, camera_alignment_speed)
 	
 func set_rear_spring_arm_position(pos: float, speed: float) -> void:
 	if camera_tween:
