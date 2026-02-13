@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bmxrwluyx8j22" path="res://Player/camera.gd" id="2_4ntmi"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_62w18"]
+radius = 0.7
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_8a836"]
 
@@ -24,10 +25,11 @@ shape = SubResource("CapsuleShape3D_62w18")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_8a836")
 
-[node name="Camera" type="Node3D" parent="." node_paths=PackedStringArray("character")]
-transform = Transform3D(1, 0, 0, 0, 0.999743, 0.0226873, 0, -0.0226873, 0.999743, 0, 0.59, 0)
+[node name="Camera" type="Node3D" parent="." node_paths=PackedStringArray("character", "edge_spring_arm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 script = ExtResource("2_4ntmi")
 character = NodePath("..")
+edge_spring_arm = NodePath("EdgeSpringArm")
 
 [node name="EdgeSpringArm" type="SpringArm3D" parent="Camera"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
