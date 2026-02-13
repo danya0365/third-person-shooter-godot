@@ -10,6 +10,8 @@ var max_y_rotation: float = 1.2
 
 var camera_tween: Tween
 
+@onready var default_edge_spring_arm_length: float = edge_spring_arm.spring_length
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -40,8 +42,8 @@ func camera_look(mouse_movement: Vector2) -> void:
 	camera_rotation.y = clamp(camera_rotation.y, -max_y_rotation, max_y_rotation)
 
 func swap_camera_alignment() -> void:
-	var new_pos: float = -edge_spring_arm.spring_length
-	set_rear_spring_arm_position(new_pos, camera_alignment_speed)
+	default_edge_spring_arm_length = -default_edge_spring_arm_length
+	set_rear_spring_arm_position(default_edge_spring_arm_length, camera_alignment_speed)
 	
 func set_rear_spring_arm_position(pos: float, speed: float) -> void:
 	if camera_tween:
