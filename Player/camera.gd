@@ -20,6 +20,9 @@ var max_y_rotation: float = 1.2
 
 var camera_tween: Tween
 
+enum CameraAlignment {LEFT = -1, RIGHT = 1, CENTER = 0}
+var current_camera_alignment = CameraAlignment.RIGHT
+
 @onready var default_edge_spring_arm_length: float = edge_spring_arm.spring_length
 @onready var default_rear_spring_arm_length: float = rear_spring_arm.spring_length
 @onready var default_fov: float = camera.fov
@@ -66,8 +69,19 @@ func camera_look(mouse_movement: Vector2) -> void:
 	camera_rotation.y = clamp(camera_rotation.y, -max_y_rotation, max_y_rotation)
 
 func swap_camera_alignment() -> void:
-	var new_pos = default_edge_spring_arm_length * -sign(edge_spring_arm.spring_length)
+	match current_camera_alignment:
+		CameraAlignment.RIGHT:
+			set_camera_alignment(CameraAlignment.LEFT)
+		CameraAlignment.LEFT:
+			set_camera_alignment(CameraAlignment.RIGHT)
+		CameraAlignment.CENTER:
+			return
+			
+	var new_pos = default_edge_spring_arm_length * current_camera_alignment
 	set_rear_spring_arm_position(new_pos, camera_alignment_speed)
+	
+func set_camera_alignment(alignment: CameraAlignment) -> void:
+	current_camera_alignment = alignment
 	
 func set_rear_spring_arm_position(pos: float, speed: float) -> void:
 	if camera_tween:
@@ -86,7 +100,7 @@ func enter_aim() -> void:
 	camera_tween.set_ease(Tween.EASE_IN_OUT)
 	
 	camera_tween.tween_property(camera, "fov", aim_fov, aim_speed)
-	camera_tween.tween_property(edge_spring_arm, "spring_length", aim_edge_spring_length*sign(edge_spring_arm.spring_length), aim_speed)
+	camera_tween.tween_property(edge_spring_arm, "spring_length", aim_edge_spring_length*current_camera_alignment, aim_speed)
 	camera_tween.tween_property(rear_spring_arm, "spring_length", aim_rear_spring_length, aim_speed)
 	
 func exit_aim() -> void:
@@ -99,7 +113,7 @@ func exit_aim() -> void:
 	camera_tween.set_ease(Tween.EASE_IN_OUT)
 	
 	camera_tween.tween_property(camera, "fov", default_fov, aim_speed)
-	camera_tween.tween_property(edge_spring_arm, "spring_length", default_edge_spring_arm_length*sign(edge_spring_arm.spring_length), aim_speed)
+	camera_tween.tween_property(edge_spring_arm, "spring_length", default_edge_spring_arm_length*current_camera_alignment, aim_speed)
 	camera_tween.tween_property(rear_spring_arm, "spring_length", default_rear_spring_arm_length, aim_speed)
 	
 func enter_sprint() -> void:
@@ -112,7 +126,7 @@ func enter_sprint() -> void:
 	camera_tween.set_ease(Tween.EASE_IN_OUT)
 	
 	camera_tween.tween_property(camera, "fov", sprint_fov, sprint_tween_speed)
-	camera_tween.tween_property(edge_spring_arm, "spring_length", default_edge_spring_arm_length*sign(edge_spring_arm.spring_length), aim_speed)
+	camera_tween.tween_property(edge_spring_arm, "spring_length", default_edge_spring_arm_length*current_camera_alignment, aim_speed)
 	camera_tween.tween_property(rear_spring_arm, "spring_length", default_rear_spring_arm_length, aim_speed)
 	
 func exit_sprint() -> void:
@@ -125,7 +139,7 @@ func exit_sprint() -> void:
 	camera_tween.set_ease(Tween.EASE_IN_OUT)
 	
 	camera_tween.tween_property(camera, "fov", default_fov, sprint_tween_speed)
-	camera_tween.tween_property(edge_spring_arm, "spring_length", default_edge_spring_arm_length*sign(edge_spring_arm.spring_length), aim_speed)
+	camera_tween.tween_property(edge_spring_arm, "spring_length", default_edge_spring_arm_length*current_camera_alignment, aim_speed)
 	camera_tween.tween_property(rear_spring_arm, "spring_length", default_rear_spring_arm_length, aim_speed)
 	
 	
