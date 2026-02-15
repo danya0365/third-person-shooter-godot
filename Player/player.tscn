@@ -1,7 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://df81a4ubghdbp"]
+[gd_scene load_steps=12 format=3 uid="uid://df81a4ubghdbp"]
 
 [ext_resource type="Script" uid="uid://b21e8yociup3q" path="res://Player/player.gd" id="1_l8h54"]
 [ext_resource type="Script" uid="uid://bmxrwluyx8j22" path="res://Player/camera.gd" id="2_4ntmi"]
+[ext_resource type="Script" uid="uid://b7goamk80oc44" path="res://Player/StateMachine/PlayerStateMachine/player_state_machine.gd" id="3_btcbx"]
+[ext_resource type="Script" uid="uid://4cpknsgx256b" path="res://Player/StateMachine/PlayerStateMachine/States/idle.gd" id="4_vtle1"]
+[ext_resource type="Script" uid="uid://cyn8i1t60wuhj" path="res://Player/StateMachine/PlayerStateMachine/States/run.gd" id="5_od3ui"]
+[ext_resource type="Script" uid="uid://drs2vu5dnrxqd" path="res://Player/StateMachine/PlayerStateMachine/States/jump.gd" id="6_00tjw"]
+[ext_resource type="Script" uid="uid://ctygmk5kpjogj" path="res://Player/StateMachine/PlayerStateMachine/States/fall.gd" id="7_x3vf3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_62w18"]
 radius = 0.7
@@ -47,3 +52,19 @@ spring_length = 1.5
 
 [node name="Camera3D" type="Camera3D" parent="Camera/EdgeSpringArm/RearSpringArm"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.032, 1.5)
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("start_state")]
+script = ExtResource("3_btcbx")
+start_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("4_vtle1")
+
+[node name="Run" type="Node" parent="StateMachine"]
+script = ExtResource("5_od3ui")
+
+[node name="Jump" type="Node" parent="StateMachine"]
+script = ExtResource("6_00tjw")
+
+[node name="Fall" type="Node" parent="StateMachine"]
+script = ExtResource("7_x3vf3")
