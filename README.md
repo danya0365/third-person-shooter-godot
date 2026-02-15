@@ -21,49 +21,61 @@ This project serves as the foundation for a tactical shooter that prioritizes:
 
 ---
 
-## ⚡ Core Systems (v0.1)
+## 📋 Master Feature Matrix
 
-The foundation has been laid. Our current build features:
+Below is the comprehensive roadmap for Project Vanguard.
 
-### 🛡️ Fluid Gameplay Architecture
-Powered by a robust **State Machine**, the character controller handles complex logic without spaghetti code.
-- **Dynamic State Handling**: Idle, Run, Jump, and Air Physics blended seamlessly.
-- **Scalable Design**: Ready to integrate Crouch, Slide, Cover, and Melee systems.
+### 1. Locomotion System 🏃
+The core of any great shooter is how it feels to move.
+- [x] **Omnidirectional Movement**: Smooth blended animations for Walk/Run in all directions.
+- [x] **Inertia & Momentum**: Physics-based acceleration/deceleration.
+- [x] **Sprint Mechanics**: Dynamic FOV changes and speed scaling.
+- [x] **Air Physics**: Tuned gravity, jump arcs, and falling states.
+- [ ] **Crouch System**: Collision shape adjustment and stealth movement.
+- [ ] **Tactical Slide**: Momentum-based sliding for evasion.
+- [ ] **Prone Stance**: Low profile movement for sniping/hiding.
+- [ ] **Parkour / Vaulting**: Auto-mantling over obstacles.
+- [ ] **Inverse Kinematics (IK)**: Foot placement on uneven terrain (Stairs/Slopes).
 
-### 🎥 Cinematic Camera Suite
-A professional-grade camera rig (`SpringArm3D`) designed for modern action standards.
-- **Smart Shoulder Swapping**: Tactical view switching (Left/Right) for corner peeking.
-- **Dynamic Aim Zoom**: Smooth FOV transitions for precision targeting.
-- **Intelligent Collision**: Automatically adjusts to environment geometry to maintain view.
+### 2. Camera & Vision 🎥
+A cinematic lens for the player's actions.
+- [x] **3rd Person Control**: Responsive `SpringArm3D` orbit system.
+- [x] **Smart Collision**: Prevents camera clipping through geometry.
+- [x] **Shoulder Swapping**: Tactical view switching (Left/Right) for corner peeking.
+- [x] **Aim-Down-Sights (ADS)**: Smooth zoom transitions for precision targeting.
+- [ ] **Screen Shake**: Dynamic impulse system for explosions/impacts.
+- [ ] **Recoil Implementation**: Procedural camera kick on firing.
+- [ ] **Action Camera**: Dynamic framing for finishers/takedowns.
 
-### 🏃 High-Fidelity Movement
-- **Inertia & Momentum**: Physics-based acceleration and deceleration for realistic weight.
-- **Sprint Mechanics**: Dynamic speed scaling with impactful visual feedback.
+### 3. Combat Mechanics ⚔️
+The heart of the gameplay loop.
+- [ ] **Hitscan Weapon System**: Instant raycast ballistics (Rifles/SMGs).
+- [ ] **Projectile Physics**: Bullet drop, travel time, and ricochets (Snipers/RPGs).
+- [ ] **Weapon Handling**: Procedural sway, recoil patterns, and spread.
+- [ ] **Damage System**: Hitboxes, hurtboxes, and critical hit detection (Headshots).
+- [ ] **Inventory Management**: Weapon switching, holstering, and pickups.
+- [ ] **Melee Combat**: Light/Heavy attacks and parry mechanics.
+- [ ] **Ragdoll Physics**: Realistic death simulations.
 
----
+### 4. Artificial Intelligence 🧠
+Smart adversaries to challenge the player.
+- [ ] **Navigation**: `NavigationServer3D` integration with dynamic pathfinding.
+- [ ] **Senses**: Vision cones and hearing radius detection.
+- [ ] **Behavior Trees**: Complex decision making (Patrol, Search, Engage, Flee).
+- [ ] **Squad Tactics**: Flanking maneuvers and suppression fire.
+- [ ] **Cover Usage**: AI intelligently utilizing environmental cover.
 
-## 🗺️ The Roadmap (Road to v1.0)
+### 5. Multiplayer & Networking 🌐
+Connecting players worldwide.
+- [ ] **Lobby System**: Matchmaking and room creation.
+- [ ] **Authority Sync**: Server-authoritative movement and state replication.
+- [ ] **Lag Compensation**: Prediction and reconciliation for smooth gameplay.
+- [ ] **Chat System**: Text and Voice integration.
 
-We have an ambitious journey ahead. Here is our plan to achieve World Class status:
-
-### Phase 1: Combat Evolution (In Progress) ⚔️
-*   **Advanced Ballistics**: Implementation of hitscan and projectile weapon systems.
-*   **Weapon Feel**: Procedural recoil, sway, and dynamic crosshair spread.
-*   **ADS Mechanics**: Precise iron-sight and scope handling.
-
-### Phase 2: Tactical Depth 🛡️
-*   **Cover System**: Context-aware cover entry, corner peeking, and blind fire.
-*   **Advanced Mobility**: Tactical slides, dodge rolls, and parkour vaulting.
-*   **CQC Integration**: Melee takedowns and close-quarters combat.
-
-### Phase 3: Intelligent Adversaries 🤖
-*   **Next-Gen AI**: Behavior Trees driving squad tactics, flanking, and suppression.
-*   **Boss Battles**: Multi-stage encounters with unique mechanics.
-
-### Phase 4: Polish & Multiplayer 🌐
-*   **Networked Warfare**: Godot High-Level Multiplayer implementation.
-*   **Visual Fidelity**: High-end VFX (particles, lighting) and post-processing.
-*   **Immersive Audio**: Spatial soundscapes and dynamic audio occlusion.
+### 6. Audio & Visuals 🎨
+- [ ] **VFX**: High-fidelity particles (Muzzle flash, blood splatters, smoke).
+- [ ] **SFX**: Spatial audio with reverb zones and occlusion.
+- [ ] **UI/HUD**: Modern, diegetic interface design.
 
 ---
 
