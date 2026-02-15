@@ -2,13 +2,28 @@
 
 ![Godot Engine](https://img.shields.io/badge/Godot-v4.4-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
-![Status](https://img.shields.io/badge/Status-Prototype-orange.svg)
+![Status](https://img.shields.io/badge/Status-Work_In_Progress-orange.svg)
 
-A professional, high-performance Third Person Shooter (TPS) controller template built with **Godot Engine 4.4**. This project features a robust connection between a modular State Machine and a smooth, cinematic Camera system.
+> **🚧 PROJECT STATUS: ACTIVE DEVELOPMENT (Pre-Alpha)**
+> This project is currently in the foundational phase. We are building a "World Class" Third Person Shooter experience from the ground up.
+
+A professional, high-performance Third Person Shooter (TPS) framework built with **Godot Engine 4.4**. This repository serves as the core for a AAA-quality shooter game, featuring a robust modular architecture designed for scalability.
 
 ---
 
-## ✨ Key Features
+## 🌍 Project Vision
+
+Our goal is to create a **state-of-the-art TPS framework** that rivals commercial titles. We are focusing on:
+*   **Responsiveness**: Instant player feedback and fluid controls.
+*   **Modularity**: A clean, component-based architecture (Solid State Machine).
+*   **Scalability**: Ready for multiplayer networking and complex AI behaviors.
+*   **Polish**: "Juicy" game feel with procedural animations, camera shakes, and dynamic effects.
+
+---
+
+## ✅ Current Features (v0.1 - Foundation)
+
+We have established the core movement and camera mechanics:
 
 ### 🧠 Advanced State Machine
 A fully modular `PlayerStateMachine` architecture that handles complex transitions with ease.
@@ -29,7 +44,54 @@ A `SpringArm3D`-based camera rig designed for modern action games.
 
 ---
 
-## 🎮 Controls
+## 🗺️ Roadmap (The "World Class" Journey)
+
+We are just getting started. Here is the path to v1.0:
+
+### Phase 1: Combat Core (In Progress) ⚔️
+- [ ] **Advanced Weapon System**:
+    - [ ] Hitscan & Projectile ballistics.
+    - [ ] Recoil patterns and procedural sway.
+    - [ ] Weapon switching & inventory management.
+- [ ] **Aim Mechanics**:
+    - [ ] Precise ADS (Aim Down Sights).
+    - [ ] Crosshair dynamic spread.
+- [ ] **Health & Damage**:
+    - [ ] Hitboxes and Hurtboxes logic.
+    - [ ] Health regeneration system.
+
+### Phase 2: Tactical Gameplay 🛡️
+- [ ] **Cover System**:
+    - [ ] Auto-detection of cover objects.
+    - [ ] Corner peeking & blind fire.
+- [ ] **Advanced Movement**:
+    - [ ] Crouch & Prone states.
+    - [ ] Tactical Slide & Dodge Roll.
+    - [ ] Vaulting & Climbing (Parkour).
+- [ ] **Melee Combat**:
+    - [ ] Close-quarters takedowns.
+
+### Phase 3: Artificial Intelligence 🤖
+- [ ] **Smart Enemy AI**:
+    - [ ] Behavior Trees for complex decision making.
+    - [ ] Flanking & Cover usage/suppression.
+    - [ ] Squad tactics & coordination.
+- [ ] **Boss Battles**:
+    - [ ] Multi-stage boss fights with unique mechanics.
+
+### Phase 4: Polish & Multiplayer 🌐
+- [ ] **Networked Multiplayer**:
+    - [ ] Godot High-Level Multiplayer integration.
+    - [ ] Server-authoritative movement.
+- [ ] **Visual Fidelity**:
+    - [ ] High-quality VFX (particles, muzzle flashes, blood impacts).
+    - [ ] Advanced Shaders & Post-processing.
+- [ ] **Audio Immersion**:
+    - [ ] Spatial Audio & Dynamic Footsteps.
+
+---
+
+## 🎮 Controls (Current)
 
 | Action | Input | Description |
 | :--- | :--- | :--- |
