@@ -10,72 +10,72 @@
 
 ## 🌍 The Vision
 
-**Project Vanguard** is a next-generation Third-Person Shooter (TPS) currently in active development using **Godot Engine 4.4**.
+**Project Vanguard** คือโปรเจกต์เกม Next-Generation Third-Person Shooter (TPS) ที่กำลังพัฒนาอย่างเข้มข้นด้วย **Godot Engine 4.4**
 
-We are not just building a controller; we are crafting a **World Class Action Experience**. Our goal is to push the boundaries of open-source game development, delivering AAA-quality mechanics, responsive controls, and high-fidelity gameplay systems.
+เราไม่ได้สร้างแค่ Controller ธรรมดา แต่เรากำลังรังสรรค์ **World Class Action Experience** เป้าหมายของเราคือการทลายขีดจำกัดของ Open-Source Game Development เพื่อส่งมอบ Gameplay Mechanics ระดับ AAA ที่มีการควบคุมตอบสนองฉับไว และระบบ Gameplay ที่มีความละเอียดสูง (High-Fidelity)
 
-This project serves as the foundation for a tactical shooter that prioritizes:
-*   **Fluidity**: Seamless transitions between movement and combat.
-*   **Immersion**: A camera system that feels like a cinematic extension of the player.
-*   **Scalability**: Built on a modular architecture designed for complex AI and multiplayer networking.
+โปรเจกต์นี้จะเป็นรากฐานสำคัญสำหรับเกม Tactical Shooter ที่ให้ความสำคัญกับ:
+*   **Fluidity**: การ Transition ระหว่างการเคลื่อนที่และระบบ Combat ที่ลื่นไหลไร้รอยต่อ
+*   **Immersion**: ระบบ Camera ที่ให้ความรู้สึกเหมือนเป็นส่วนหนึ่งของผู้เล่นในแบบ Cinematic
+*   **Scalability**: ออกแบบด้วย Modular Architecture ที่รองรับระบบ AI ซับซ้อนและ Multiplayer Networking
 
 ---
 
 ## 📋 Master Feature Matrix
 
-Below is the comprehensive roadmap for Project Vanguard.
+ด้านล่างคือ Roadmap ที่ครอบคลุมสำหรับ Project Vanguard
 
 ### 1. Locomotion System 🏃
-The core of any great shooter is how it feels to move.
-- [x] **Omnidirectional Movement**: Smooth blended animations for Walk/Run in all directions.
-- [x] **Inertia & Momentum**: Physics-based acceleration/deceleration.
-- [x] **Sprint Mechanics**: Dynamic FOV changes and speed scaling.
-- [x] **Air Physics**: Tuned gravity, jump arcs, and falling states.
-- [ ] **Crouch System**: Collision shape adjustment and stealth movement.
-- [ ] **Tactical Slide**: Momentum-based sliding for evasion.
-- [ ] **Prone Stance**: Low profile movement for sniping/hiding.
-- [ ] **Parkour / Vaulting**: Auto-mantling over obstacles.
-- [ ] **Inverse Kinematics (IK)**: Foot placement on uneven terrain (Stairs/Slopes).
+หัวใจหลักของเกม Shooter ชั้นนำคือความรู้สึกในการเคลื่อนไหว
+- [x] **Omnidirectional Movement**: แอนิเมชันการเดิน/วิ่งที่ผสมผสานอย่าลงตัวในทุกทิศทาง
+- [x] **Inertia & Momentum**: ระบบ Physics-based Acceleration/Deceleration ให้ความรู้สึกมีน้ำหนักสมจริง
+- [x] **Sprint Mechanics**: เปลี่ยน Speed แบบ Dynamic พร้อมเอฟเฟกต์ FOV
+- [x] **Air Physics**: ปรับจูน Gravity, Jump Arcs และสถานะ Falling อย่างละเอียด
+- [ ] **Crouch System**: ปรับ Collision Shape และการเคลื่อนที่แบบ Stealth
+- [ ] **Tactical Slide**: ระบบสไลด์ตาม Momentum เพื่อการหลบหลีก
+- [ ] **Prone Stance**: การหมอบคลานสำหรับ Sniper หรือการซ่อนตัว
+- [ ] **Parkour / Vaulting**: ระบบปีนป่ายสิ่งกีดขวางแบบ Auto-mantling
+- [ ] **Inverse Kinematics (IK)**: การจัดวางเท้าบนพื้นผิวต่างระดับ (เช่น บันได หรือ ทางลาด)
 
 ### 2. Camera & Vision 🎥
-A cinematic lens for the player's actions.
-- [x] **3rd Person Control**: Responsive `SpringArm3D` orbit system.
-- [x] **Smart Collision**: Prevents camera clipping through geometry.
-- [x] **Shoulder Swapping**: Tactical view switching (Left/Right) for corner peeking.
-- [x] **Aim-Down-Sights (ADS)**: Smooth zoom transitions for precision targeting.
-- [ ] **Screen Shake**: Dynamic impulse system for explosions/impacts.
-- [ ] **Recoil Implementation**: Procedural camera kick on firing.
-- [ ] **Action Camera**: Dynamic framing for finishers/takedowns.
+เลนส์ Cinematic สำหรับทุกแอคชั่นของผู้เล่น
+- [x] **3rd Person Control**: ควบคุมด้วยระบบ Orbit ของ `SpringArm3D` ที่ตอบสนองทันใจ
+- [x] **Smart Collision**: ป้องกัน Camera ทะลุผ่าน Geometry ของฉาก
+- [x] **Shoulder Swapping**: สลับมุมมอง Tactical (ซ้าย/ขวา) สำหรับการ Peek ตามมุมตึก
+- [x] **Aim-Down-Sights (ADS)**: Transition การ Zoom ที่นุ่มนวลเพื่อการเล็งที่แม่นยำ
+- [ ] **Screen Shake**: ระบบ Impulse แบบ Dynamic สำหรับแรงระเบิดหรือแรงกระแทก
+- [ ] **Recoil Implementation**: Procedural Camera Kick เมื่อมีการยิง
+- [ ] **Action Camera**: การจัดเฟรมแบบ Dynamic สำหรับท่า Finishers/Takedowns
 
 ### 3. Combat Mechanics ⚔️
-The heart of the gameplay loop.
-- [ ] **Hitscan Weapon System**: Instant raycast ballistics (Rifles/SMGs).
-- [ ] **Projectile Physics**: Bullet drop, travel time, and ricochets (Snipers/RPGs).
-- [ ] **Weapon Handling**: Procedural sway, recoil patterns, and spread.
-- [ ] **Damage System**: Hitboxes, hurtboxes, and critical hit detection (Headshots).
-- [ ] **Inventory Management**: Weapon switching, holstering, and pickups.
-- [ ] **Melee Combat**: Light/Heavy attacks and parry mechanics.
-- [ ] **Ragdoll Physics**: Realistic death simulations.
+หัวใจหลักของ Gameplay Loop
+- [ ] **Hitscan Weapon System**: ระบบ Ballistics แบบ Instant Raycast (สำหรับ Rifles/SMGs)
+- [ ] **Projectile Physics**: คำนวณ Bullet Drop, Travel Time และการสะท้อน (สำหรับ Snipers/RPGs)
+- [ ] **Weapon Handling**: ระบบ Procedural Sway, Recoil Patterns และ Spread
+- [ ] **Damage System**: ตรวจจับ Hitboxes, Hurtboxes และ Critical Hit (Headshots)
+- [ ] **Inventory Management**: การสลับอาวุธ, การเก็บอาวุธ และ Pickups
+- [ ] **Melee Combat**: การโจมตีแบบ Light/Heavy และระบบ Parry
+- [ ] **Ragdoll Physics**: จำลองการตายแบบสมจริงด้วย Physics
 
 ### 4. Artificial Intelligence 🧠
-Smart adversaries to challenge the player.
-- [ ] **Navigation**: `NavigationServer3D` integration with dynamic pathfinding.
-- [ ] **Senses**: Vision cones and hearing radius detection.
-- [ ] **Behavior Trees**: Complex decision making (Patrol, Search, Engage, Flee).
-- [ ] **Squad Tactics**: Flanking maneuvers and suppression fire.
-- [ ] **Cover Usage**: AI intelligently utilizing environmental cover.
+ศัตรูที่ชาญฉลาดเพื่อท้าทายผู้เล่น
+- [ ] **Navigation**: เชื่อมต่อ `NavigationServer3D` พร้อม Dynamic Pathfinding
+- [ ] **Senses**: การตรวจจับด้วย Vision Cones และรัศมีเสียง (Hearing Radius)
+- [ ] **Behavior Trees**: การตัดสินใจที่ซับซ้อน (Patrol, Search, Engage, Flee)
+- [ ] **Squad Tactics**: กลยุทธ์การ Flanking และการยิงกดดัน (Suppression Fire)
+- [ ] **Cover Usage**: AI สามารถใช้งานที่กำบังในฉากได้อย่างชาญฉลาด
 
 ### 5. Multiplayer & Networking 🌐
-Connecting players worldwide.
-- [ ] **Lobby System**: Matchmaking and room creation.
-- [ ] **Authority Sync**: Server-authoritative movement and state replication.
-- [ ] **Lag Compensation**: Prediction and reconciliation for smooth gameplay.
-- [ ] **Chat System**: Text and Voice integration.
+เชื่อมต่อผู้เล่นทั่วโลก
+- [ ] **Lobby System**: ระบบ Matchmaking และการสร้างห้อง
+- [ ] **Authority Sync**: การเคลื่อนที่แบบ Server-Authoritative และ State Replication
+- [ ] **Lag Compensation**: ระบบ Prediction และ Reconciliation เพื่อ Gameplay ที่ลื่นไหล
+- [ ] **Chat System**: รองรับทั้ง Text และ Voice Integration
 
 ### 6. Audio & Visuals 🎨
-- [ ] **VFX**: High-fidelity particles (Muzzle flash, blood splatters, smoke).
-- [ ] **SFX**: Spatial audio with reverb zones and occlusion.
-- [ ] **UI/HUD**: Modern, diegetic interface design.
+- [ ] **VFX**: High-Fidelity Particles (แสงปลายกระบอกปืน, เลือดสาด, ควัน)
+- [ ] **SFX**: ระบบ Spatial Audio พร้อม Reverb Zones และ Occlusion
+- [ ] **UI/HUD**: การออกแบบ Interface ที่ทันสมัยแบบ Diegetic Design
 
 ---
 
@@ -83,12 +83,12 @@ Connecting players worldwide.
 
 | Command | Input | Function |
 | :--- | :--- | :--- |
-| **Tactical Move** | `W`, `A`, `S`, `D` | Directional Movement |
-| **Jump / Vault** | `Space` | Vertical Traversal |
-| **Sprint** | `Shift` | High-Speed Mobility |
-| **Precision Aim** | `Right Click` | ADS / Zoom |
-| **Switch Shoulder** | `Tab` | Camera Tactical View (L/R) |
-| **Look** | `Mouse` | Camera Control |
+| **Tactical Move** | `W`, `A`, `S`, `D` | เคลื่อนที่ตามทิศทาง |
+| **Jump / Vault** | `Space` | กระโดด / ปีนป่าย |
+| **Sprint** | `Shift` | เคลื่อนที่ความเร็วสูง |
+| **Precision Aim** | `Right Click` | เล็งประณีต (ADS / Zoom) |
+| **Switch Shoulder** | `Tab` | สลับมุมมอง Tactical (ซ้าย/ขวา) |
+| **Look** | `Mouse` | ควบคุมมุมกล้อง |
 
 ---
 
@@ -99,28 +99,28 @@ Connecting players worldwide.
     git clone https://github.com/yourusername/project-vanguard.git
     ```
 2.  **Initialize Engine**:
-    - Launch **Godot Engine 4.4+**.
-    - Import the `project.godot` file.
+    - เปิดโปรแกรม **Godot Engine 4.4+**
+    - กดปุ่ม **Import** และเลือกไฟล์ `project.godot`
 3.  **Launch Prototype**:
-    - Press `F5` to initiate the simulation.
+    - กดปุ่ม `F5` เพื่อเริ่ม Simulation
 
 ---
 
 ## 🤝 Join the Development
 
-We are building something big. Contributions are welcome.
+เรากำลังสร้างสิ่งที่ยิ่งใหญ่ และยินดีต้อนรับทุก Contribution
 
-1.  Fork the repository.
-2.  Create your feature branch (`git checkout -b feature/NewSystem`).
-3.  Commit your changes (`git commit -m 'Implement NewSystem'`).
-4.  Push to the branch (`git push origin feature/NewSystem`).
-5.  Open a Pull Request.
+1.  Fork repository นี้
+2.  สร้าง Feature Branch (`git checkout -b feature/NewSystem`)
+3.  Commit การเปลี่ยนแปลง (`git commit -m 'Implement NewSystem'`)
+4.  Push ไปยัง Branch (`git push origin feature/NewSystem`)
+5.  เปิด Pull Request
 
 ---
 
 ## 📄 License & Credits
 
-*   **License**: MIT License - see [LICENSE](LICENSE) for details.
+*   **License**: MIT License - ดูรายละเอียดที่ไฟล์ [LICENSE](LICENSE)
 *   **Engine**: [Godot Engine](https://godotengine.org)
 *   **Assets**: [Kenney](https://kenney.nl)
 
